@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0DC4FB268B296C00A62B04 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0DC4FA268B296C00A62B04 /* EditProjectView.swift */; };
 		4D13C0E226848615005CB69C /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13C0E126848615005CB69C /* EditItemView.swift */; };
 		4D13C0E426849D4C005CB69C /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13C0E326849D4C005CB69C /* ItemRowView.swift */; };
 		4D16477E2680F24D0049AB27 /* Item-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0DC4FA268B296C00A62B04 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		4D13C0E126848615005CB69C /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
 		4D13C0E326849D4C005CB69C /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelpers.swift"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				4DCE2A51267C97DB00653FE9 /* HomeView.swift */,
 				4DCE2A53267C986100653FE9 /* ProjectsView.swift */,
 				4DCE2A372679E68400653FE9 /* UltimatePortfolioApp.swift */,
+				4D0DC4FA268B296C00A62B04 /* EditProjectView.swift */,
 				4D3627B82689AF09009D73A3 /* ProjectHeaderView.swift */,
 				4DCE2A48267B365100653FE9 /* Main.xcdatamodeld */,
 				4D7D50842685CF0300A932D4 /* Binding-OnChange.swift */,
@@ -194,6 +197,7 @@
 				4D3627B92689AF09009D73A3 /* ProjectHeaderView.swift in Sources */,
 				4DCE2A4A267B365100653FE9 /* Main.xcdatamodeld in Sources */,
 				4D1647802680F39B0049AB27 /* Project-CoreDataHelpers.swift in Sources */,
+				4D0DC4FB268B296C00A62B04 /* EditProjectView.swift in Sources */,
 				4DCE2A4C267B3AA900653FE9 /* DataController.swift in Sources */,
 				4D13C0E426849D4C005CB69C /* ItemRowView.swift in Sources */,
 				4DCE2A3A2679E68400653FE9 /* ContentView.swift in Sources */,
