@@ -36,6 +36,10 @@ extension Project {
     }
     
     var projectItems: [Item] {
+        items?.allObjects as? [Item] ?? []
+    }
+    
+    var projectItemsDefaultSorted: [Item] {
         let itemsArray = items?.allObjects as? [Item] ?? []
         
         return itemsArray.sorted { first, second in
@@ -65,5 +69,16 @@ extension Project {
         
         let completedItems = originalItems.filter(\.completed)
         return Double(completedItems.count) / Double(originalItems.count)
+    }
+    
+    func projectItems(using sortOrder: Item.SortOrder) -> [Item] {
+        switch sortOrder {
+        case .title:
+            return projectItems.sorted(by: \Item.itemTitle)
+        case .creationDate:
+            return projectItems.sorted(by: \Item.itemCreationDate)
+        case .optimized:
+        return projectItemsDefaultSorted
+        }
     }
 }
