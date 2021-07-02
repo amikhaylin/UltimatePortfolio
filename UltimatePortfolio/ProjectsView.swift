@@ -24,7 +24,7 @@ struct ProjectsView: View {
             List {
                 ForEach(projects.wrappedValue) { project in
                     Section(header: ProjectHeaderView(project: project)) {
-                        ForEach(items(for: project)) { item in
+                        ForEach(project.projectItems(using: sortOrder)) { item in
                             ItemRowView(item: item)
                         }
                         .onDelete { offsets in
@@ -93,17 +93,6 @@ struct ProjectsView: View {
         self.showClosedProjects = showClosedProjects
         
         projects = FetchRequest<Project>(entity: Project.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Project.creationDate, ascending: false)], predicate: NSPredicate(format: "closed = %d", showClosedProjects))
-    }
-    
-    func items(for project: Project) -> [Item] {
-        switch sortOrder {
-        case .title:
-            return project.projectItems.sorted { $0.itemTitle < $1.itemTitle }
-        case .creationDate:
-            return project.projectItems.sorted { $0.itemCreationDate < $1.itemCreationDate }
-        case .optimized:
-            return project.projectItemsDefaultSorted
-        }
     }
 }
 
