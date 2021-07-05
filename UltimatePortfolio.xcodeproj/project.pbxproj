@@ -26,6 +26,7 @@
 		4DCE2A50267B530200653FE9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCE2A4F267B530200653FE9 /* CloudKit.framework */; };
 		4DCE2A52267C97DB00653FE9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE2A51267C97DB00653FE9 /* HomeView.swift */; };
 		4DCE2A54267C986100653FE9 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE2A53267C986100653FE9 /* ProjectsView.swift */; };
+		4DD3BE032692F471000BB49C /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD3BE022692F471000BB49C /* SelectSomethingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		4DCE2A4F267B530200653FE9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		4DCE2A51267C97DB00653FE9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4DCE2A53267C986100653FE9 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		4DD3BE022692F471000BB49C /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				4DCE2A4D267B526100653FE9 /* UltimatePortfolio.entitlements */,
 				4DCE2A51267C97DB00653FE9 /* HomeView.swift */,
 				4DCE2A53267C986100653FE9 /* ProjectsView.swift */,
+				4DD3BE022692F471000BB49C /* SelectSomethingView.swift */,
 				4DCE2A372679E68400653FE9 /* UltimatePortfolioApp.swift */,
 				4D0DC4FA268B296C00A62B04 /* EditProjectView.swift */,
 				4D3627B82689AF09009D73A3 /* ProjectHeaderView.swift */,
@@ -202,6 +205,7 @@
 				4D1647802680F39B0049AB27 /* Project-CoreDataHelpers.swift in Sources */,
 				4D0DC4FB268B296C00A62B04 /* EditProjectView.swift in Sources */,
 				4DCE2A4C267B3AA900653FE9 /* DataController.swift in Sources */,
+				4DD3BE032692F471000BB49C /* SelectSomethingView.swift in Sources */,
 				4D13C0E426849D4C005CB69C /* ItemRowView.swift in Sources */,
 				4DCE2A3A2679E68400653FE9 /* ContentView.swift in Sources */,
 				4D7D50852685CF0300A932D4 /* Binding-OnChange.swift in Sources */,
