@@ -97,7 +97,11 @@ struct ProjectsView: View {
     init(showClosedProjects: Bool) {
         self.showClosedProjects = showClosedProjects
         
-        projects = FetchRequest<Project>(entity: Project.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Project.creationDate, ascending: false)], predicate: NSPredicate(format: "closed = %d", showClosedProjects))
+        projects = FetchRequest<Project>(
+            entity: Project.entity(),
+            sortDescriptors: [NSSortDescriptor(keyPath: \Project.creationDate, ascending: false)],
+            predicate: NSPredicate(format: "closed = %d", showClosedProjects)
+        )
     }
     
     func addItem(to project: Project) {
