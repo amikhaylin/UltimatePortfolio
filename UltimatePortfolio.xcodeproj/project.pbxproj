@@ -195,7 +195,7 @@
 				4DCE2A302679E68400653FE9 /* Sources */,
 				4DCE2A312679E68400653FE9 /* Frameworks */,
 				4DCE2A322679E68400653FE9 /* Resources */,
-				4D0AE0912694594B00A24235 /* TODO finder */,
+				4DB04F9226A55BEE008DD9D8 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -258,7 +258,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4D0AE0912694594B00A24235 /* TODO finder */ = {
+		4DB04F9226A55BEE008DD9D8 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,14 +267,14 @@
 			);
 			inputPaths = (
 			);
-			name = "TODO finder";
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
