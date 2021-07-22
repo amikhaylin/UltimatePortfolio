@@ -94,42 +94,77 @@
 		4D6F554A2695B76300E701C2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4D16477F2680F39B0049AB27 /* Project-CoreDataHelpers.swift */,
+				4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */,
 				4DD3BE042692F727000BB49C /* Bundle-Decodable.swift */,
 				4D6F554D2695B85C00E701C2 /* Color-Additions.swift */,
 				4D7D50842685CF0300A932D4 /* Binding-OnChange.swift */,
-				4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */,
 				4D964D82268EF71C00D5FFCB /* Sequence-Sorting.swift */,
-				4D16477F2680F39B0049AB27 /* Project-CoreDataHelpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4D6F554B2695B7A900E701C2 /* Views */ = {
+		4DB04F9326A94ED0008DD9D8 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				4DCE2A53267C986100653FE9 /* ProjectsView.swift */,
+				4DB04F81269C4DFC008DD9D8 /* Localizable.strings */,
+				4DB04F86269C4EA4008DD9D8 /* Localizable.stringsdict */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		4DB04F9426A94EEB008DD9D8 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				4DCE2A402679E68500653FE9 /* Info.plist */,
+				4DCE2A48267B365100653FE9 /* Main.xcdatamodeld */,
+				4DCE2A4D267B526100653FE9 /* UltimatePortfolio.entitlements */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		4DB04F9526A95082008DD9D8 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				4DCE2A392679E68400653FE9 /* ContentView.swift */,
+				4DB04F9826A950AA008DD9D8 /* Awards */,
+				4DB04F9726A950A2008DD9D8 /* Projects */,
+				4DB04F9626A95096008DD9D8 /* Home */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		4DB04F9626A95096008DD9D8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
 				4DCE2A51267C97DB00653FE9 /* HomeView.swift */,
 				4DB04F90269ED5CB008DD9D8 /* ProjectSummaryView.swift */,
 				4DB04F8E269EC257008DD9D8 /* ItemListView.swift */,
-				4D0AE08F2694421D00A24235 /* AwardsView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4DB04F9726A950A2008DD9D8 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				4DCE2A53267C986100653FE9 /* ProjectsView.swift */,
 				4DD3BE022692F471000BB49C /* SelectSomethingView.swift */,
 				4D0DC4FA268B296C00A62B04 /* EditProjectView.swift */,
 				4D3627B82689AF09009D73A3 /* ProjectHeaderView.swift */,
-				4DCE2A392679E68400653FE9 /* ContentView.swift */,
 				4D13C0E126848615005CB69C /* EditItemView.swift */,
 				4D13C0E326849D4C005CB69C /* ItemRowView.swift */,
 			);
-			path = Views;
+			path = Projects;
 			sourceTree = "<group>";
 		};
-		4D6F554C2695B82000E701C2 /* Model */ = {
+		4DB04F9826A950AA008DD9D8 /* Awards */ = {
 			isa = PBXGroup;
 			children = (
-				4DCE2A4B267B3AA900653FE9 /* DataController.swift */,
-				4DCE2A48267B365100653FE9 /* Main.xcdatamodeld */,
+				4DB04F8B269C4F5C008DD9D8 /* Awards.json */,
 				4D0AE08D2694416E00A24235 /* Award.swift */,
+				4D0AE08F2694421D00A24235 /* AwardsView.swift */,
 			);
-			path = Model;
+			path = Awards;
 			sourceTree = "<group>";
 		};
 		4DCE2A2B2679E68400653FE9 = {
@@ -153,17 +188,14 @@
 		4DCE2A362679E68400653FE9 /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
-				4D6F554C2695B82000E701C2 /* Model */,
-				4D6F554B2695B7A900E701C2 /* Views */,
+				4DB04F9526A95082008DD9D8 /* Activities */,
+				4DB04F9426A94EEB008DD9D8 /* Configuration */,
+				4DB04F9326A94ED0008DD9D8 /* Localization */,
 				4D6F554A2695B76300E701C2 /* Extensions */,
-				4DCE2A4D267B526100653FE9 /* UltimatePortfolio.entitlements */,
 				4DCE2A372679E68400653FE9 /* UltimatePortfolioApp.swift */,
-				4DB04F81269C4DFC008DD9D8 /* Localizable.strings */,
-				4DB04F86269C4EA4008DD9D8 /* Localizable.stringsdict */,
+				4DCE2A4B267B3AA900653FE9 /* DataController.swift */,
 				4D3627BA2689B2E8009D73A3 /* Colors.xcassets */,
 				4DCE2A3B2679E68500653FE9 /* Assets.xcassets */,
-				4DCE2A402679E68500653FE9 /* Info.plist */,
-				4DB04F8B269C4F5C008DD9D8 /* Awards.json */,
 				4DCE2A3D2679E68500653FE9 /* Preview Content */,
 			);
 			path = UltimatePortfolio;
@@ -464,12 +496,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/Configuration/UltimatePortfolio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
 				DEVELOPMENT_TEAM = 9Z68336878;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = UltimatePortfolio/Info.plist;
+				INFOPLIST_FILE = UltimatePortfolio/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,12 +519,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/UltimatePortfolio.entitlements;
+				CODE_SIGN_ENTITLEMENTS = UltimatePortfolio/Configuration/UltimatePortfolio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UltimatePortfolio/Preview Content\"";
 				DEVELOPMENT_TEAM = 9Z68336878;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = UltimatePortfolio/Info.plist;
+				INFOPLIST_FILE = UltimatePortfolio/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
