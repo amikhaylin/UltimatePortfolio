@@ -24,6 +24,7 @@
 		4DB04F89269C4F5C008DD9D8 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DB04F8B269C4F5C008DD9D8 /* Awards.json */; };
 		4DB04F8F269EC257008DD9D8 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB04F8E269EC257008DD9D8 /* ItemListView.swift */; };
 		4DB04F91269ED5CB008DD9D8 /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB04F90269ED5CB008DD9D8 /* ProjectSummaryView.swift */; };
+		4DB8E12926AAA36400212493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8E12826AAA36400212493 /* LaunchScreen.storyboard */; };
 		4DCE2A382679E68400653FE9 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE2A372679E68400653FE9 /* UltimatePortfolioApp.swift */; };
 		4DCE2A3A2679E68400653FE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE2A392679E68400653FE9 /* ContentView.swift */; };
 		4DCE2A3C2679E68500653FE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCE2A3B2679E68500653FE9 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		4DB04F8D269C4F63008DD9D8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ru; path = ru.lproj/Awards.json; sourceTree = "<group>"; };
 		4DB04F8E269EC257008DD9D8 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		4DB04F90269ED5CB008DD9D8 /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
+		4DB8E12826AAA36400212493 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DCE2A342679E68400653FE9 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCE2A372679E68400653FE9 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		4DCE2A392679E68400653FE9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				4DCE2A402679E68500653FE9 /* Info.plist */,
 				4DCE2A48267B365100653FE9 /* Main.xcdatamodeld */,
+				4DB8E12826AAA36400212493 /* LaunchScreen.storyboard */,
 				4DCE2A4D267B526100653FE9 /* UltimatePortfolio.entitlements */,
 			);
 			path = Configuration;
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DCE2A472679E72200653FE9 /* README.md in Resources */,
+				4DB8E12926AAA36400212493 /* LaunchScreen.storyboard in Resources */,
 				4DB04F7F269C4DFC008DD9D8 /* Localizable.strings in Resources */,
 				4DB04F89269C4F5C008DD9D8 /* Awards.json in Resources */,
 				4D3627BB2689B2E8009D73A3 /* Colors.xcassets in Resources */,
