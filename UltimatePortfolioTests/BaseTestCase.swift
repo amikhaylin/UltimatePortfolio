@@ -1,15 +1,15 @@
 //
-//  UltimatePortfolioTests.swift
+//  BaseTestCase.swift
 //  UltimatePortfolioTests
 //
-//  Created by Andrey Mikhaylin on 23.07.2021.
+//  Created by Andrey Mikhaylin on 26.07.2021.
 //
 
-import CoreData
 import XCTest
+import CoreData
 @testable import UltimatePortfolio
 
-class BaseTextCase: XCTestCase {
+class BaseTestCase: XCTestCase {
     var dataController: DataController!
     var managedObjectContext: NSManagedObjectContext!
     
