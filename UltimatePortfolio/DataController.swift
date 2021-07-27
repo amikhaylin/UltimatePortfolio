@@ -18,8 +18,7 @@ class DataController: ObservableObject {
     /// or on permanent storage (for use in regular app runs.) Defaults to permanent storage.
     /// - Parameter inMemory: Whether to store this data in temporary memory or not.
     init(inMemory: Bool = false) {
-        /// The CloudKit container used to store all our data
-        container = NSPersistentCloudKitContainer(name: "Main")
+        container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
         
         // For testing and previewing purposes, we create a
         // temporary, in-memory database by writing to /dev/null
@@ -120,5 +119,17 @@ class DataController: ObservableObject {
         }
         
         return dataController
+    }()
+    
+    static let model: NSManagedObjectModel = {
+        guard let url = Bundle.main.url(forResource: "Main", withExtension: "momd") else {
+            fatalError("Failed to locate model file")
+        }
+        
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Failed to load model file")
+        }
+        
+        return managedObjectModel
     }()
 }
