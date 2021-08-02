@@ -49,6 +49,16 @@
                ReferencedContainer = "container:UltimatePortfolio.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4DF2C89026B3E2AA00A79E05"
+               BuildableName = "UltimatePortfolioUITests.xctest"
+               BlueprintName = "UltimatePortfolioUITests"
+               ReferencedContainer = "container:UltimatePortfolio.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
