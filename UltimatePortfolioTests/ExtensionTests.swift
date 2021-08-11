@@ -17,7 +17,6 @@ class ExtensionTests: XCTestCase {
     }
     
     func testSequenceKeyPathSortingCustom() {
-        // swiftlint:disable:next nesting
         struct Example: Equatable {
             let value: String
         }
@@ -42,6 +41,7 @@ class ExtensionTests: XCTestCase {
     func testDecodingString() {
         let bundle = Bundle(for: ExtensionTests.self)
         let data = bundle.decode(String.self, from: "DecodableString.json")
+        // swiftlint:disable:next line_length
         XCTAssertEqual(data, "The rain in Spain falls mainly on the Spaniards.", "The string must match the content of DecodableString.json")
     }
     
