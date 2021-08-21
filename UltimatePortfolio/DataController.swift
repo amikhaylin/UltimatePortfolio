@@ -13,7 +13,21 @@ import UserNotifications
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
-    init(inMemory: Bool = false) {
+    let defaults: UserDefaults
+    
+    var fullVersionUnlocked: Bool {
+        get {
+            defaults.bool(forKey: "fullVersionUnlocked")
+        }
+        
+        set {
+            defaults.setValue(newValue, forKey: "fullVersionUnlocked")
+        }
+    }
+    
+    init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        
         container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
         
         if inMemory {
