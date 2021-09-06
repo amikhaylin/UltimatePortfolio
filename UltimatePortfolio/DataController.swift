@@ -9,11 +9,26 @@ import CoreData
 import SwiftUI
 import CoreSpotlight
 import UserNotifications
+import StoreKit
 
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
-    init(inMemory: Bool = false) {
+    let defaults: UserDefaults
+    
+    var fullVersionUnlocked: Bool {
+        get {
+            defaults.bool(forKey: "fullVersionUnlocked")
+        }
+        
+        set {
+            defaults.setValue(newValue, forKey: "fullVersionUnlocked")
+        }
+    }
+    
+    init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
+        self.defaults = defaults
+        
         container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
         
         if inMemory {
@@ -229,4 +244,17 @@ class DataController: ObservableObject {
         
         return managedObjectModel
     }()
+    
+    // MARK: Review
+    
+    func appLaunched() {
+        guard count(for: Project.fetchRequest()) >= 5 else { return }
+        
+        let allScenes = UIApplication.shared.connectedScenes
+        let scene = allScenes.first { $0.activationState == .foregroundActive }
+        
+        if let windowScene = scene as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
+        }
+    }
 }
