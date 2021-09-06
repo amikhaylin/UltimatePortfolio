@@ -9,6 +9,7 @@ import CoreData
 import SwiftUI
 import CoreSpotlight
 import UserNotifications
+import StoreKit
 
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
@@ -243,4 +244,17 @@ class DataController: ObservableObject {
         
         return managedObjectModel
     }()
+    
+    // MARK: Review
+    
+    func appLaunched() {
+        guard count(for: Project.fetchRequest()) >= 5 else { return }
+        
+        let allScenes = UIApplication.shared.connectedScenes
+        let scene = allScenes.first { $0.activationState == .foregroundActive }
+        
+        if let windowScene = scene as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: windowScene)
+        }
+    }
 }
