@@ -46,6 +46,14 @@ struct EditProjectView: View {
             
             Section(header: Text("Project reminders")) {
                 Toggle("Show reminders", isOn: $remindMe.animation().onChange(update))
+                    .alert(isPresented: $showingNotificationError) {
+                        Alert(
+                            title: Text("Oops!"),
+                            message: Text("There was a problem. Please check you have notifications enabled."),
+                            primaryButton: .default(Text("Check Settings"), action: showAppSettings),
+                            secondaryButton: .cancel()
+                        )
+                    }
                 
                 if remindMe {
                     DatePicker(
@@ -72,14 +80,6 @@ struct EditProjectView: View {
                 title: Text("Delete project?"),
                 message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
                 primaryButton: .default(Text("Delete"), action: delete),
-                secondaryButton: .cancel()
-            )
-        }
-        .alert(isPresented: $showingNotificationError) {
-            Alert(
-                title: Text("Oops!"),
-                message: Text("There was a problem. Please check you have notifications enabled."),
-                primaryButton: .default(Text("Check Settings"), action: showAppSettings),
                 secondaryButton: .cancel()
             )
         }

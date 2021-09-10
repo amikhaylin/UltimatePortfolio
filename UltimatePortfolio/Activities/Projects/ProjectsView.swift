@@ -93,7 +93,6 @@ struct ProjectsView: View {
             .sheet(isPresented: $showingUnlockView) {
                 UnlockView()
             }
-// TODO: remove           .onOpenURL(perform: openURL)
             
             SelectSomethingView()
         }
@@ -136,11 +135,6 @@ struct ProjectsView: View {
             }
         }
     }
-  
-    // TODO: remove
-//    func openURL(_ url: URL) {
-//        addProject()
-//    }
 }
 
 struct ProjectsView_Previews: PreviewProvider {
