@@ -9,6 +9,7 @@ import SwiftUI
 import CoreSpotlight
 
 struct ContentView: View {
+    @EnvironmentObject var dataController: DataController
     @SceneStorage("selectedView") var selectedView: String?
     
     var body: some View {
@@ -42,10 +43,16 @@ struct ContentView: View {
                 }
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
+        .onOpenURL(perform: openURL)
     }
     
     func moveToHome(_ input: Any) {
         selectedView = HomeView.tag
+    }
+    
+    func openURL(_ url: URL) {
+        selectedView = ProjectsView.openTag
+        _ = dataController.addProject()
     }
 }
 
