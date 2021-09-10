@@ -135,14 +135,7 @@ struct ProjectsView: View {
     
     func addProject() {
         withAnimation {
-            let canCreate = dataController.fullVersionUnlocked || dataController.count(for: Project.fetchRequest()) < 3
-            
-            if canCreate {
-                let project = Project(context: managedObjectContext)
-                project.closed = false
-                project.creationDate = Date()
-                dataController.save()
-            } else {
+            if dataController.addProject() == false {
                 showingUnlockView.toggle()
             }
         }
