@@ -96,6 +96,20 @@ class DataController: ObservableObject {
         save()
     }
     
+    @discardableResult func addProject() -> Bool {
+        let canCreate = fullVersionUnlocked || count(for: Project.fetchRequest()) < 3
+        
+        if canCreate {
+            let project = Project(context: container.viewContext)
+            project.closed = false
+            project.creationDate = Date()
+            save()
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func item(with uniqueIdentifier: String) -> Item? {
         guard let url = URL(string: uniqueIdentifier) else {
             return nil

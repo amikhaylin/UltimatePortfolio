@@ -130,4 +130,16 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Delete"].tap()
         XCTAssertEqual(app.tables.cells.count, 1, "There should leave only 1 project row")
     }
+    
+    func testDeleteProjectFromUI() {
+        // Go to Open Projects and add one project and one item.
+        testAddingItemInsertsRows()
+        
+        app.buttons["NEW PROJECT"].tap()
+        app.buttons["Delete this project"].tap()
+        
+        app.alerts["Delete project?"].buttons["Delete"].tap()
+        app.buttons["Open"].tap()
+        XCTAssertEqual(app.tables.cells.count, 0, "There should be 0 projects in Open tab")
+    }
 }
