@@ -11,6 +11,7 @@ import CoreSpotlight
 struct ContentView: View {
     @EnvironmentObject var dataController: DataController
     @SceneStorage("selectedView") var selectedView: String?
+    private let newProjectActivity = "com.amikhaylin.UltimatePortfolioApp.newProject"
     
     var body: some View {
         TabView(selection: $selectedView) {
@@ -43,6 +44,11 @@ struct ContentView: View {
                 }
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
+        .userActivity(newProjectActivity) { activity in
+            activity.isEligibleForPrediction = true
+            activity.title = "New Project"
+        }
+        .onContinueUserActivity(newProjectActivity, perform: createProject)
         .onOpenURL(perform: openURL)
     }
     
@@ -51,6 +57,11 @@ struct ContentView: View {
     }
     
     func openURL(_ url: URL) {
+        selectedView = ProjectsView.openTag
+        _ = dataController.addProject()
+    }
+    
+    func createProject(_ userActivity: NSUserActivity) {
         selectedView = ProjectsView.openTag
         _ = dataController.addProject()
     }
