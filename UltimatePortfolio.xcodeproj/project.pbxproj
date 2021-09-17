@@ -24,6 +24,8 @@
 		4D49DA7026AE95B6009C6A78 /* AwardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D49DA6F26AE95B6009C6A78 /* AwardTests.swift */; };
 		4D4DE69226EA29D00011799E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DE69126EA29D00011799E /* AppDelegate.swift */; };
 		4D4DE69426EA29FD0011799E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DE69326EA29FD0011799E /* SceneDelegate.swift */; };
+		4D4F3F9B26F38AFE00120E55 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F3F9A26F38AFE00120E55 /* ProjectViewModel.swift */; };
+		4D4F3F9D26F4A87800120E55 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F3F9C26F4A87800120E55 /* HomeViewModel.swift */; };
 		4D6F554E2695B85C00E701C2 /* Color-Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6F554D2695B85C00E701C2 /* Color-Additions.swift */; };
 		4D7D50852685CF0300A932D4 /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7D50842685CF0300A932D4 /* Binding-OnChange.swift */; };
 		4D80B5F526AFE5500092FFEE /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80B5F426AFE5500092FFEE /* DevelopmentTests.swift */; };
@@ -92,6 +94,8 @@
 		4D49DA6F26AE95B6009C6A78 /* AwardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardTests.swift; sourceTree = "<group>"; };
 		4D4DE69126EA29D00011799E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D4DE69326EA29FD0011799E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4D4F3F9A26F38AFE00120E55 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		4D4F3F9C26F4A87800120E55 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		4D6F554D2695B85C00E701C2 /* Color-Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Additions.swift"; sourceTree = "<group>"; };
 		4D7D50842685CF0300A932D4 /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
 		4D80B5F426AFE5500092FFEE /* DevelopmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				4DCE2A51267C97DB00653FE9 /* HomeView.swift */,
+				4D4F3F9C26F4A87800120E55 /* HomeViewModel.swift */,
 				4DB04F90269ED5CB008DD9D8 /* ProjectSummaryView.swift */,
 				4DB04F8E269EC257008DD9D8 /* ItemListView.swift */,
 			);
@@ -244,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				4DCE2A53267C986100653FE9 /* ProjectsView.swift */,
+				4D4F3F9A26F38AFE00120E55 /* ProjectViewModel.swift */,
 				4DD3BE022692F471000BB49C /* SelectSomethingView.swift */,
 				4D0DC4FA268B296C00A62B04 /* EditProjectView.swift */,
 				4D3627B82689AF09009D73A3 /* ProjectHeaderView.swift */,
@@ -522,6 +528,7 @@
 				4D43834826E60601007C2DFB /* ProductView.swift in Sources */,
 				4DCE2A54267C986100653FE9 /* ProjectsView.swift in Sources */,
 				4D43834A26E607ED007C2DFB /* UnlockView.swift in Sources */,
+				4D4F3F9B26F38AFE00120E55 /* ProjectViewModel.swift in Sources */,
 				4DB04F91269ED5CB008DD9D8 /* ProjectSummaryView.swift in Sources */,
 				4D3627B92689AF09009D73A3 /* ProjectHeaderView.swift in Sources */,
 				4DC518DE26D29FA50016BAAE /* SKProduct-LocalizedPrice.swift in Sources */,
@@ -531,6 +538,7 @@
 				4D6F554E2695B85C00E701C2 /* Color-Additions.swift in Sources */,
 				4D0DC4FB268B296C00A62B04 /* EditProjectView.swift in Sources */,
 				4DCE2A4C267B3AA900653FE9 /* DataController.swift in Sources */,
+				4D4F3F9D26F4A87800120E55 /* HomeViewModel.swift in Sources */,
 				4D2E9EEF26CEB61100DC82D4 /* UnlockManager.swift in Sources */,
 				4DD3BE032692F471000BB49C /* SelectSomethingView.swift in Sources */,
 				4D0AE08E2694416E00A24235 /* Award.swift in Sources */,
