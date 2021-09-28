@@ -18,7 +18,7 @@ jobs:
       uses: norio-nomura/action-swiftlint@3.2.1
 
   Test:
-    runs-on: macOS-latest
+    runs-on: macOS-11
     steps:
     - uses: actions/checkout@v1
     - name: List available Xcode versions
