@@ -31,7 +31,7 @@ class UltimatePortfolioUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no list rows initially")
         
         for tapCount in 1...3 {
-            app.buttons["add"].tap()
+            app.buttons["Add Project"].tap()
             XCTAssertEqual(app.tables.cells.count, tapCount, "There should be \(tapCount) row(s)")
         }
     }
@@ -40,7 +40,7 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Open"].tap()
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no list rows initially")
         
-        app.buttons["add"].tap()
+        app.buttons["Add Project"].tap()
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 row (project)")
         
         app.buttons["Add New Item"].tap()
@@ -51,10 +51,10 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Open"].tap()
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no list rows initially")
         
-        app.buttons["add"].tap()
+        app.buttons["Add Project"].tap()
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 row (project)")
         
-        app.buttons["NEW PROJECT"].tap()
+        app.buttons["Compose"].tap()
         app.textFields["Project name"].tap()
         app.textFields["Project name"].typeText(" 2")
         
@@ -64,7 +64,9 @@ class UltimatePortfolioUITests: XCTestCase {
 //        app.buttons["Return"].tap()
         
         app.buttons["Open Projects"].tap()
-        XCTAssertTrue(app.buttons["NEW PROJECT 2"].exists, "The new project name should be visible in the list")
+
+        // print(app.debugDescription)
+        XCTAssertTrue(app.staticTexts["New Project 2"].exists, "The new project name should be visible in the list")
     }
     
     func testEditingItemUpdatesCorrectly() {
@@ -98,11 +100,11 @@ class UltimatePortfolioUITests: XCTestCase {
         // Go to Open Projects and add one project and one item.
         testAddingItemInsertsRows()
         
-        app.buttons["NEW PROJECT"].tap()
+        app.buttons["Compose"].tap()
         app.buttons["Close this project"].tap()
         
         // Move back
-        app.buttons["Open Projects"].tap()
+        // app.buttons["Open Projects"].tap()
         XCTAssertEqual(app.tables.cells.count, 0, "Project should be moved to Closed tab")
         
         // Move to closed
@@ -110,12 +112,13 @@ class UltimatePortfolioUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 project with 1 item in Closed tab")
         
         // Reopen project
-        app.buttons["NEW PROJECT"].tap()
+        app.buttons["Compose"].tap()
         app.buttons["Reopen this project"].tap()
         
         // Move back
-        app.buttons["Closed Projects"].tap()
-        XCTAssertEqual(app.tables.cells.count, 0, "Project should be moved to Open tab")
+        // app.buttons["Closed Projects"].tap()
+        XCTAssertFalse(app.buttons["New Item 2"].exists, "Project should be moved to Open tab")
+        // XCTAssertEqual(app.tables.cells.count, 0, "Project should be moved to Open tab")
         
         // Move to open
         app.buttons["Open"].tap()
@@ -135,7 +138,7 @@ class UltimatePortfolioUITests: XCTestCase {
         // Go to Open Projects and add one project and one item.
         testAddingItemInsertsRows()
         
-        app.buttons["NEW PROJECT"].tap()
+        app.buttons["Compose"].tap()
         app.buttons["Delete this project"].tap()
         
         app.alerts["Delete project?"].buttons["Delete"].tap()
