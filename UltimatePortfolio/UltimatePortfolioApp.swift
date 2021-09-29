@@ -34,6 +34,10 @@ struct UltimatePortfolioApp: App {
         
         _dataController = StateObject(wrappedValue: dataController)
         _unlockManager = StateObject(wrappedValue: unlockManager)
+        
+//        #if targetEnvironment(simulator)
+//        UserDefaults.standard.set("amikhaylin", forKey: "username")
+//        #endif
     }
     
     func save(_ note: Notification) {

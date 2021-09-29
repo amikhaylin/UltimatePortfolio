@@ -51,6 +51,7 @@
 		4D7F3C6827019FBD007CC17A /* LoadStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7F3C6727019FBD007CC17A /* LoadStates.swift */; };
 		4D7F3C6B2701A066007CC17A /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7F3C6A2701A066007CC17A /* SharedProjectsView.swift */; };
 		4D7F3C6D2702EC6A007CC17A /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7F3C6C2702EC69007CC17A /* SharedItemsView.swift */; };
+		4D7F3C7027043DF2007CC17A /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7F3C6F27043DF2007CC17A /* SignInView.swift */; };
 		4D80B5F526AFE5500092FFEE /* DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80B5F426AFE5500092FFEE /* DevelopmentTests.swift */; };
 		4D80B5F726B136370092FFEE /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D80B5F626B136370092FFEE /* ExtensionTests.swift */; };
 		4D80B5FA26B19D4E0092FFEE /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D80B5F926B19D4E0092FFEE /* DecodableDictionary.json */; };
@@ -160,6 +161,7 @@
 		4D7F3C6727019FBD007CC17A /* LoadStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStates.swift; sourceTree = "<group>"; };
 		4D7F3C6A2701A066007CC17A /* SharedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProjectsView.swift; sourceTree = "<group>"; };
 		4D7F3C6C2702EC69007CC17A /* SharedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItemsView.swift; sourceTree = "<group>"; };
+		4D7F3C6F27043DF2007CC17A /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		4D80B5F426AFE5500092FFEE /* DevelopmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentTests.swift; sourceTree = "<group>"; };
 		4D80B5F626B136370092FFEE /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		4D80B5F926B19D4E0092FFEE /* DecodableDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableDictionary.json; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				4D7F3C6C2702EC69007CC17A /* SharedItemsView.swift */,
 				4D7F3C6527019DFB007CC17A /* SharedItem.swift */,
 				4D7F3C6727019FBD007CC17A /* LoadStates.swift */,
+				4D7F3C6F27043DF2007CC17A /* SignInView.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				4D3627B92689AF09009D73A3 /* ProjectHeaderView.swift in Sources */,
 				4DC518DE26D29FA50016BAAE /* SKProduct-LocalizedPrice.swift in Sources */,
 				4D0AE0902694421D00A24235 /* AwardsView.swift in Sources */,
+				4D7F3C7027043DF2007CC17A /* SignInView.swift in Sources */,
 				4DCE2A4A267B365100653FE9 /* Main.xcdatamodeld in Sources */,
 				4D1647802680F39B0049AB27 /* Project-CoreDataHelpers.swift in Sources */,
 				4D7F3C6D2702EC6A007CC17A /* SharedItemsView.swift in Sources */,
