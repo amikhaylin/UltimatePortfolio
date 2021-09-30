@@ -14,6 +14,7 @@
 		4D13C0E426849D4C005CB69C /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D13C0E326849D4C005CB69C /* ItemRowView.swift */; };
 		4D16477E2680F24D0049AB27 /* Item-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */; };
 		4D1647802680F39B0049AB27 /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16477F2680F39B0049AB27 /* Project-CoreDataHelpers.swift */; };
+		4D2081CB27059178005DBFD9 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2081CA27059177005DBFD9 /* ChatMessage.swift */; };
 		4D2E9EEF26CEB61100DC82D4 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2E9EEE26CEB61100DC82D4 /* UnlockManager.swift */; };
 		4D3627B92689AF09009D73A3 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3627B82689AF09009D73A3 /* ProjectHeaderView.swift */; };
 		4D3627BB2689B2E8009D73A3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3627BA2689B2E8009D73A3 /* Colors.xcassets */; };
@@ -128,6 +129,7 @@
 		4D13C0E326849D4C005CB69C /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		4D16477F2680F39B0049AB27 /* Project-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		4D2081CA27059177005DBFD9 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		4D2E9EEE26CEB61100DC82D4 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
 		4D2E9EF026CECAF900DC82D4 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		4D3627B82689AF09009D73A3 /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				4D7F3C6527019DFB007CC17A /* SharedItem.swift */,
 				4D7F3C6727019FBD007CC17A /* LoadStates.swift */,
 				4D7F3C6F27043DF2007CC17A /* SignInView.swift */,
+				4D2081CA27059177005DBFD9 /* ChatMessage.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				4D467D8126F1D42400BFCD3D /* DataController-Review.swift in Sources */,
 				4DD3BE052692F727000BB49C /* Bundle-Decodable.swift in Sources */,
 				4D4DE69226EA29D00011799E /* AppDelegate.swift in Sources */,
+				4D2081CB27059178005DBFD9 /* ChatMessage.swift in Sources */,
 				4DB04F8F269EC257008DD9D8 /* ItemListView.swift in Sources */,
 				4DCE2A52267C97DB00653FE9 /* HomeView.swift in Sources */,
 				4DCE2A382679E68400653FE9 /* UltimatePortfolioApp.swift in Sources */,
