@@ -9,6 +9,10 @@ import SwiftUI
 import CoreHaptics
 import CloudKit
 
+enum CloudStatus {
+    case checking, exists, absent
+}
+
 struct EditProjectView: View {
     @ObservedObject var project: Project
     
@@ -29,6 +33,10 @@ struct EditProjectView: View {
     
     @AppStorage("username") var username: String?
     @State private var showingSignIn = false
+    
+    @State private var cloudStatus = CloudStatus.checking
+    
+    @State private var cloudError: CloudError?
     
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -79,8 +87,17 @@ struct EditProjectView: View {
         }
         .navigationTitle("Edit Project")
         .toolbar {
-            Button(action: uploadToCloud) {
-                Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+            switch cloudStatus {
+            case .checking:
+                ProgressView()
+            case .exists:
+                Button(action: removeFromCloud) {
+                    Label("remove from iCloud", systemImage: "icloud.slash")
+                }
+            case .absent:
+                Button(action: uploadToCloud) {
+                    Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+                }
             }
         }
         .onDisappear(perform: dataController.save)
@@ -92,7 +109,11 @@ struct EditProjectView: View {
                 secondaryButton: .cancel()
             )
         }
+        .alert(item: $cloudError, content: { error in
+            Alert(title: Text("There was an error"), message: Text(error.message))
+        })
         .sheet(isPresented: $showingSignIn, content: SignInView.init)
+        .onAppear(perform: updateCloudStatus)
     }
 
     init(project: Project) {
@@ -212,15 +233,46 @@ struct EditProjectView: View {
             
             operation.modifyRecordsCompletionBlock = { _, _, error in
                 if let error = error {
-                    print("Error: \(error)")
+                    cloudError = error.getCloudError()
                 }
+                
+                updateCloudStatus()
             }
+            
+            cloudStatus = .checking
             
             CKContainer.default().publicCloudDatabase.add(operation)
         } else {
             showingSignIn = true
         }
         
+    }
+    
+    func updateCloudStatus() {
+        project.checkCloudStatus { exists in
+            if exists {
+                cloudStatus = .exists
+            } else {
+                cloudStatus = .absent
+            }
+        }
+    }
+    
+    func removeFromCloud() {
+        let name = project.objectID.uriRepresentation().absoluteString
+        let id = CKRecord.ID(recordName: name)
+        
+        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
+        
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            if let error = error {
+                cloudError = error.getCloudError()
+            }
+            updateCloudStatus()
+        }
+        
+        cloudStatus = .checking
+        CKContainer.default().publicCloudDatabase.add(operation)
     }
 }
 

@@ -15,6 +15,8 @@
 		4D16477E2680F24D0049AB27 /* Item-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */; };
 		4D1647802680F39B0049AB27 /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16477F2680F39B0049AB27 /* Project-CoreDataHelpers.swift */; };
 		4D2081CB27059178005DBFD9 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2081CA27059177005DBFD9 /* ChatMessage.swift */; };
+		4D2081CD270ADEEE005DBFD9 /* Error-CloudKitMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2081CC270ADEEE005DBFD9 /* Error-CloudKitMessage.swift */; };
+		4D2081CF270AE59F005DBFD9 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2081CE270AE59F005DBFD9 /* CloudError.swift */; };
 		4D2E9EEF26CEB61100DC82D4 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2E9EEE26CEB61100DC82D4 /* UnlockManager.swift */; };
 		4D3627B92689AF09009D73A3 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3627B82689AF09009D73A3 /* ProjectHeaderView.swift */; };
 		4D3627BB2689B2E8009D73A3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3627BA2689B2E8009D73A3 /* Colors.xcassets */; };
@@ -130,6 +132,8 @@
 		4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		4D16477F2680F39B0049AB27 /* Project-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		4D2081CA27059177005DBFD9 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		4D2081CC270ADEEE005DBFD9 /* Error-CloudKitMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error-CloudKitMessage.swift"; sourceTree = "<group>"; };
+		4D2081CE270AE59F005DBFD9 /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		4D2E9EEE26CEB61100DC82D4 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
 		4D2E9EF026CECAF900DC82D4 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		4D3627B82689AF09009D73A3 /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 				4DC518DD26D29FA50016BAAE /* SKProduct-LocalizedPrice.swift */,
 				4D16477D2680F24D0049AB27 /* Item-CoreDataHelpers.swift */,
 				4D467D7C26F1D27E00BFCD3D /* DataController-Reminders.swift */,
+				4D2081CC270ADEEE005DBFD9 /* Error-CloudKitMessage.swift */,
 				4D467D8026F1D42400BFCD3D /* DataController-Review.swift */,
 				4D467D7E26F1D32E00BFCD3D /* DataController-Awards.swift */,
 				4DD3BE042692F727000BB49C /* Bundle-Decodable.swift */,
@@ -287,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				4D7F3C6327019D74007CC17A /* SharedProject.swift */,
+				4D2081CE270AE59F005DBFD9 /* CloudError.swift */,
 				4D7F3C6A2701A066007CC17A /* SharedProjectsView.swift */,
 				4D7F3C6C2702EC69007CC17A /* SharedItemsView.swift */,
 				4D7F3C6527019DFB007CC17A /* SharedItem.swift */,
@@ -699,6 +705,7 @@
 				4D0AE0902694421D00A24235 /* AwardsView.swift in Sources */,
 				4D7F3C7027043DF2007CC17A /* SignInView.swift in Sources */,
 				4DCE2A4A267B365100653FE9 /* Main.xcdatamodeld in Sources */,
+				4D2081CF270AE59F005DBFD9 /* CloudError.swift in Sources */,
 				4D1647802680F39B0049AB27 /* Project-CoreDataHelpers.swift in Sources */,
 				4D7F3C6D2702EC6A007CC17A /* SharedItemsView.swift in Sources */,
 				4D6F554E2695B85C00E701C2 /* Color-Additions.swift in Sources */,
@@ -717,6 +724,7 @@
 				4D964D83268EF71C00D5FFCB /* Sequence-Sorting.swift in Sources */,
 				4D467D8126F1D42400BFCD3D /* DataController-Review.swift in Sources */,
 				4DD3BE052692F727000BB49C /* Bundle-Decodable.swift in Sources */,
+				4D2081CD270ADEEE005DBFD9 /* Error-CloudKitMessage.swift in Sources */,
 				4D4DE69226EA29D00011799E /* AppDelegate.swift in Sources */,
 				4D2081CB27059178005DBFD9 /* ChatMessage.swift in Sources */,
 				4DB04F8F269EC257008DD9D8 /* ItemListView.swift in Sources */,
