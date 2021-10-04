@@ -118,7 +118,7 @@ struct SharedItemsView: View {
         
         operation.queryCompletionBlock = { _, error in
             if let error = error {
-                cloudError = error.getCloudError()
+                cloudError = CloudError(error)
             }
             
             if items.isEmpty {
@@ -150,7 +150,7 @@ struct SharedItemsView: View {
         
         CKContainer.default().publicCloudDatabase.save(message) { record, error in
             if let error = error {
-                cloudError = error.getCloudError()
+                cloudError = CloudError(error)
                 newChatText = backupChatText
             } else if let record = record {
                 let message = ChatMessage(from: record)

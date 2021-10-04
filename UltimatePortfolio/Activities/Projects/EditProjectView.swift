@@ -83,6 +83,14 @@ struct EditProjectView: View {
                     showingDeleteConfirm.toggle()
                 }
                 .accentColor(.red)
+                .alert(isPresented: $showingDeleteConfirm) {
+                    Alert(
+                        title: Text("Delete project?"),
+                        message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
+                        primaryButton: .default(Text("Delete"), action: delete),
+                        secondaryButton: .cancel()
+                    )
+                }
             }
         }
         .navigationTitle("Edit Project")
@@ -101,14 +109,6 @@ struct EditProjectView: View {
             }
         }
         .onDisappear(perform: dataController.save)
-        .alert(isPresented: $showingDeleteConfirm) {
-            Alert(
-                title: Text("Delete project?"),
-                message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
-                primaryButton: .default(Text("Delete"), action: delete),
-                secondaryButton: .cancel()
-            )
-        }
         .alert(item: $cloudError, content: { error in
             Alert(title: Text("There was an error"), message: Text(error.message))
         })
@@ -233,7 +233,7 @@ struct EditProjectView: View {
             
             operation.modifyRecordsCompletionBlock = { _, _, error in
                 if let error = error {
-                    cloudError = error.getCloudError()
+                    cloudError = CloudError(error)
                 }
                 
                 updateCloudStatus()
@@ -266,7 +266,7 @@ struct EditProjectView: View {
         
         operation.modifyRecordsCompletionBlock = { _, _, error in
             if let error = error {
-                cloudError = error.getCloudError()
+                cloudError = CloudError(error)
             }
             updateCloudStatus()
         }
