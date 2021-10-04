@@ -23,7 +23,7 @@ class UltimatePortfolioUITests: XCTestCase {
     }
 
     func testAppHas4Tabs() throws {
-        XCTAssertEqual(app.tabBars.buttons.count, 4, "There should be 4 tabs")
+        XCTAssertEqual(app.tabBars.buttons.count, 5, "There should be 5 tabs")
     }
     
     func testOpenProjectTabAddsProjects() {

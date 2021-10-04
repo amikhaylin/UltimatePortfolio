@@ -7,6 +7,11 @@
 
 import SwiftUI
 import CoreHaptics
+import CloudKit
+
+enum CloudStatus {
+    case checking, exists, absent
+}
 
 struct EditProjectView: View {
     @ObservedObject var project: Project
@@ -25,6 +30,13 @@ struct EditProjectView: View {
     @State private var showingDeleteConfirm = false
     
     @State private var engine = try? CHHapticEngine()
+    
+    @AppStorage("username") var username: String?
+    @State private var showingSignIn = false
+    
+    @State private var cloudStatus = CloudStatus.checking
+    
+    @State private var cloudError: CloudError?
     
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -71,18 +83,37 @@ struct EditProjectView: View {
                     showingDeleteConfirm.toggle()
                 }
                 .accentColor(.red)
+                .alert(isPresented: $showingDeleteConfirm) {
+                    Alert(
+                        title: Text("Delete project?"),
+                        message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
+                        primaryButton: .default(Text("Delete"), action: delete),
+                        secondaryButton: .cancel()
+                    )
+                }
             }
         }
         .navigationTitle("Edit Project")
-        .onDisappear(perform: dataController.save)
-        .alert(isPresented: $showingDeleteConfirm) {
-            Alert(
-                title: Text("Delete project?"),
-                message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
-                primaryButton: .default(Text("Delete"), action: delete),
-                secondaryButton: .cancel()
-            )
+        .toolbar {
+            switch cloudStatus {
+            case .checking:
+                ProgressView()
+            case .exists:
+                Button(action: removeFromCloud) {
+                    Label("remove from iCloud", systemImage: "icloud.slash")
+                }
+            case .absent:
+                Button(action: uploadToCloud) {
+                    Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+                }
+            }
         }
+        .onDisappear(perform: dataController.save)
+        .alert(item: $cloudError, content: { error in
+            Alert(title: Text("There was an error"), message: Text(error.message))
+        })
+        .sheet(isPresented: $showingSignIn, content: SignInView.init)
+        .onAppear(perform: updateCloudStatus)
     }
 
     init(project: Project) {
@@ -192,6 +223,56 @@ struct EditProjectView: View {
                 ? [.isButton, .isSelected]
                 : .isButton
         )
+    }
+    
+    func uploadToCloud() {
+        if let username = username {
+            let records = project.prepareCloudRecords(owner: username)
+            let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+            operation.savePolicy = .allKeys
+            
+            operation.modifyRecordsCompletionBlock = { _, _, error in
+                if let error = error {
+                    cloudError = CloudError(error)
+                }
+                
+                updateCloudStatus()
+            }
+            
+            cloudStatus = .checking
+            
+            CKContainer.default().publicCloudDatabase.add(operation)
+        } else {
+            showingSignIn = true
+        }
+        
+    }
+    
+    func updateCloudStatus() {
+        project.checkCloudStatus { exists in
+            if exists {
+                cloudStatus = .exists
+            } else {
+                cloudStatus = .absent
+            }
+        }
+    }
+    
+    func removeFromCloud() {
+        let name = project.objectID.uriRepresentation().absoluteString
+        let id = CKRecord.ID(recordName: name)
+        
+        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
+        
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            if let error = error {
+                cloudError = CloudError(error)
+            }
+            updateCloudStatus()
+        }
+        
+        cloudStatus = .checking
+        CKContainer.default().publicCloudDatabase.add(operation)
     }
 }
 
