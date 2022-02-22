@@ -15,6 +15,7 @@ struct SharedItemsView: View {
     @State private var itemsLoadState = LoadState.inactive
     
     @State private var messages = [ChatMessage]()
+    @AppStorage("chatCount") var chatCount = 0
     
     @AppStorage("username") var username: String?
     @State private var showingSignIn = false
@@ -81,7 +82,7 @@ struct SharedItemsView: View {
         .navigationTitle(project.title)
         .alert(item: $cloudError, content: { error in
             Alert(title: Text("There was an error"),
-                  message: Text(error.message))
+                  message: Text(error.localizedMessage))
         })
         .onAppear {
             fetchSharedItems()
@@ -154,6 +155,7 @@ struct SharedItemsView: View {
                 newChatText = backupChatText
             } else if let record = record {
                 let message = ChatMessage(from: record)
+                chatCount += 1
                 messages.append(message)
             }
         }
