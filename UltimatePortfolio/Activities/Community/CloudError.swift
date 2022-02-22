@@ -7,10 +7,15 @@
 
 import Foundation
 import CloudKit
+import SwiftUI
 
 struct CloudError: Identifiable {
     var id: String { message }
     var message: String
+    
+    var localizedMessage: LocalizedStringKey {
+        LocalizedStringKey(message)
+    }
     
     init(_ error: Error) {
         guard let error = error as? CKError else {
