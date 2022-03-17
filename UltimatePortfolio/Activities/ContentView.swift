@@ -52,7 +52,9 @@ struct ContentView: View {
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
         .userActivity(newProjectActivity) { activity in
+            #if os(iOS) || os(watchOS)
             activity.isEligibleForPrediction = true
+            #endif
             activity.title = "New Project"
         }
         .onContinueUserActivity(newProjectActivity, perform: createProject)

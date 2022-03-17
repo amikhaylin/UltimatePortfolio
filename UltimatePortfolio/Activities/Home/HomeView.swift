@@ -46,7 +46,9 @@ struct HomeView: View {
                 }
             }
             .background(Color.systemGroupedBackground.ignoresSafeArea())
+            #if os(iOS)
             .navigationBarTitle("Home")
+            #endif
             .toolbar {
                 Button("Add Data") {
                     viewModel.addSampleData()

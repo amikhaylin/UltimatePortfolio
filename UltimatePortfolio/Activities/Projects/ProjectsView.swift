@@ -13,8 +13,6 @@ struct ProjectsView: View {
     static let closedTag: String? = "Closed"
     
     @StateObject var viewModel: ViewModel
-    
-    @State private var showingSortOrder = false
 
     var projectList: some View {
         List {
@@ -43,27 +41,25 @@ struct ProjectsView: View {
     }
     
     var addProjectToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
+        ToolbarItem(placement: .primaryAction) {
             if viewModel.showClosedProjects == false {
                 Button {
                     withAnimation {
                         viewModel.addProject()
                     }
                 } label: {
-                    if UIAccessibility.isVoiceOverRunning {
-                        Text("Add Project")
-                    } else {
-                        Label("Add Project", systemImage: "plus")
-                    }
+                    Label("Add Project", systemImage: "plus")
                 }
             }
         }
     }
     
     var sortOrderToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarLeading) {
-            Button {
-                showingSortOrder.toggle()
+        ToolbarItem(placement: .cancellationAction) {
+            Menu {
+                Button("Optimized") { viewModel.sortOrder = .optimized }
+                Button("Creation Date") { viewModel.sortOrder = .creationDate }
+                Button("Title") { viewModel.sortOrder = .title }
             } label: {
                 Label("Sort", systemImage: "arrow.up.arrow.down")
             }
@@ -84,13 +80,6 @@ struct ProjectsView: View {
             .toolbar {
                 addProjectToolbarItem
                 sortOrderToolbarItem
-            }
-            .actionSheet(isPresented: $showingSortOrder) {
-                ActionSheet(title: Text("Sort items"), message: nil, buttons: [
-                    .default(Text("Optimized")) { viewModel.sortOrder = .optimized },
-                    .default(Text("Creation Date")) { viewModel.sortOrder = .creationDate },
-                    .default(Text("Title")) { viewModel.sortOrder = .title }
-                ])
             }
             .sheet(isPresented: $viewModel.showingUnlockView) {
                 UnlockView()
